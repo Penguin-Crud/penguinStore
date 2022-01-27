@@ -44,10 +44,17 @@ public class PenguinController {
     public ResponseEntity<Penguin> update(@RequestBody Penguin penguin, @PathVariable Integer id){
         try{
             Penguin existingPenguin = penguinService.get(id);
+
             penguinService.savePenguin(penguin);
             return new ResponseEntity<>(HttpStatus.OK);
         }catch (NoSuchElementException e){
-            return new ResponseEntity<>(HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable Integer id){
+        penguinService.delete(id);
+        return "Deleted Penguin with id "+id;
     }
 }

@@ -16,19 +16,16 @@ public class PenguinServiceImpl implements PenguinService{
 
     @Override
     public Penguin savePenguin(Penguin penguin) {
-
         return penguinRepository.save(penguin);
     }
 
     @Override
     public List<Penguin> getAllPenguins() {
-
         return penguinRepository.findAll();
     }
 
     @Override
     public Penguin get(Integer id) {
-
         return penguinRepository.findById(id).get();
     }
 
