@@ -4,6 +4,7 @@ import com.penguincoders.storepenguin.model.Penguin;
 import com.penguincoders.storepenguin.repository.PenguinRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -24,5 +25,18 @@ public class PenguinServiceImpl implements PenguinService{
 
         return penguinRepository.findAll();
     }
+
+    @Override
+    public Penguin get(Integer id) {
+
+        return penguinRepository.findById(id).get();
+    }
+
+    @Override
+    public void delete(Integer id){
+        penguinRepository.deleteById(id);
+    }
+
+
 }
 
