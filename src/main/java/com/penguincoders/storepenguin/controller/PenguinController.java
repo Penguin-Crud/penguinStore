@@ -3,14 +3,13 @@ package com.penguincoders.storepenguin.controller;
 import com.penguincoders.storepenguin.model.Penguin;
 import com.penguincoders.storepenguin.service.PenguinService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
 @RequestMapping("/penguin")
+@CrossOrigin
+
 public class PenguinController {
 
     @Autowired
