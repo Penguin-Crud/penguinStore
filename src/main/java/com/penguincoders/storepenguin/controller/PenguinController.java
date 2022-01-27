@@ -5,6 +5,8 @@ import com.penguincoders.storepenguin.service.PenguinService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/penguin")
@@ -21,4 +23,8 @@ public class PenguinController {
         return "New penguin is added";
     }
 
+    @GetMapping("/getAll")
+    public List<Penguin> getAllPenguins(){
+        return penguinService.getAllPenguins();
+    }
 }
